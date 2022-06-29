@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Transporter Dashboard</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css\dashboard.css'%}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <img class="mb-4" src="static\img\Logo 1-01.png" alt="" width="72" height="57">
+      <div class="navbar-nav">
+        <div class="nav-item">
+          <a class="nav-link px-3 text-white" href="/dasht">Dashboard</a>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link px-3 text-white" href="/tprofile">Profile</a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link px-3 text-success" href="/addt">Add details</a>
+          </div>
+        </div>
+        <div class="nav-item text-nowrap">
+          <div class="nav-item">
+            <a class="nav-link px-3 text-white" href="/tlogin">Sign out</a>
+          </div>
+      </div>
+    </nav>
+</header>
+</head>
+<body>
+    <div class="container mb-3 py-4">
+        <h1 class="text-center">Tranporter</h1>
+        <form method="post" action="/addt">
+        {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Driver Name</label>
+                <input type="text" class="form-control" id="dname" name="dname" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+                <label for="name">Driver license no</label>
+                <input type="text" class="form-control" id="license_no" name="license_no" placeholder="Enter your l no">
+            </div>
+
+
+            <div class="form-group">
+                <label for="dphone">driver Phone Number</label>
+                <input type="phone" class="form-control" id="dphone" name="dphone" placeholder="Enter Your Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="v_no">vehical no</label>
+                <input type="text" class="form-control" id="v_no" name="v_no" placeholder="Enter your Name">
+            </div>
+
+            <div class="form-group">
+                <label for="v_type">vehical type</label>
+                <input type="text" class="form-control" id="v_type" name="v_type" placeholder="Enter vehical type">
+            </div>
+            <div class="form-group">
+                <label for="permit_wt">permitted weight</label>
+                <input type="text" class="form-control" id="permit_wt" name="permit_wt" placeholder="Enter your Name">
+            </div>
+          
+            <button class="btn btn-primary my-5" type="submit">Submit</button>
+        </form>
+
+    </div>
+</body>
+</html>
